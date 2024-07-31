@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    background-color: #000000;
+}
+
+#app {
+    width: 1120px;
+    min-width: auto;
+    height: 70rem;
+    margin-inline: 25px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8.5rem;
+}
+
+div#table {
+    border: 1px solid #4A808C;
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+/* Configurações do HEADER */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding-top: 10px;
+}
+
+input[type=search] {
+    background-color: #06181C;
+    min-width: 300px;
+    height: 4.8rem;
+    
+    margin-right: .8rem;
+    border-radius: .5rem;
+    border: none;
+}
+
+::placeholder {
+    padding-left: 1.6rem;
+}
+
+header button {
+    width: 150px;
+    height: 4.8rem;
+    border-radius: .5rem;
+    border: none;
+
+    color: white;
+    background-color: #065E7C;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+}
+/* Configurações da TABELA */
+table {
+    width: 100%;
+    color: white;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #092D38;
+    height: 64px;
+}
+
+tbody img {
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #4a808c36;
+    border-top: 1px solid #4A808C;
+    border-bottom: 1px solid #4A808C;
+}
+
+thead tr th, tbody tr td {
+    text-align: left;
+    padding-left: 4rem;
+}
+
+tbody tr td {
+    height: 10.4rem;
+}
+
+@media screen and (min-width: 1000px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .search {
+        display: flex;
+    }
+
+    input[type=search] {
+        width: 460px;
+    }
+
+    div#table {
+        width: 1120px;
+    }
+}
