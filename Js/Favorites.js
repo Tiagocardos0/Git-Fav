@@ -69,6 +69,7 @@ export class FavoritesView extends Favorites {
 
         this.update()
         this.onAdd()
+        this.tbody.appendChild(this.messageinitial());
     }
 
     onAdd() {
@@ -76,7 +77,6 @@ export class FavoritesView extends Favorites {
 
         BtnFavorite.addEventListener('click', () => {
             const {value} = this.root.querySelector('header .search input')
-
             this.add(value)
         })
     }
@@ -84,7 +84,7 @@ export class FavoritesView extends Favorites {
     update() {
         this.removeAllTr()
 
-        this.entries.forEach( user => { /* Para cada objeto dentro do ARRAY Cria-se uma linha (TR) */
+        this.entries.forEach( user => { /* Para cada objeto dentro do ARRAY Cria-se uma linha (TR) || For each object within the ARRAY, a line (TR) is created*/
             const row = this.createRow()
 
             row.querySelector('.user img').src = `https://github.com/${user.login}.png`
@@ -107,14 +107,14 @@ export class FavoritesView extends Favorites {
         })
     }
 
-    removeAllTr() { /* Remove todas as linhas da tabela TR */
+    removeAllTr() { /* Remove todas as linhas da tabela TR || Removes all rows from the TR table */
         this.tbody.querySelectorAll('tr').forEach(tr => {
             tr.remove()
         });
         
     }
 
-    createRow() { /* Cria uma linha na tabela TR */
+    createRow() { /* Cria uma linha na tabela TR || Create a row in the TR table*/
         const tr = document.createElement('tr')
 
         tr.innerHTML = `
@@ -130,4 +130,12 @@ export class FavoritesView extends Favorites {
         return tr
     }
 
+    messageinitial() {
+        const tr = document.createElement('div')
+
+        tr.innerHTML = `
+            <div class="starmessage"><img src="assets/Estrela.svg"> <img src="assets/h1star.svg" alt=""></div>
+        `
+        return tr
+    }
 }

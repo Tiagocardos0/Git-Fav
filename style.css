@@ -103,8 +103,6 @@ table tbody {
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: #020202 #ffffff;
-    
-
 }
 
 table thead th, table tbody td {
@@ -133,12 +131,6 @@ tbody tr:nth-child(even) {
 
 tbody tr td {
     height: 10.4rem;
-}
-
-button 
-
-table tbody::-webkit-scrollbar {
-   
 }
 
 table tbody::-webkit-scrollbar-track {
