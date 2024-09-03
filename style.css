@@ -22,7 +22,7 @@ body {
 }
 
 #app {
-    width: 1120px;
+    width: 112rem;
     min-width: auto;
     overflow: hidden;
 
@@ -36,12 +36,12 @@ div#table {
     border-radius: 1.2rem;
     overflow: hidden;
 }
-/* Configurações do HEADER */
+/* Configurações do HEADER || HEADER Settings */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 2rem;
 }
 
 .search {
@@ -67,7 +67,7 @@ input[type=search] {
 }
 
 header button {
-    width: 150px;
+    width: 15rem;
     height: 4.8rem;
     border-radius: .5rem;
     border: none;
@@ -81,7 +81,7 @@ header button {
     gap: .8rem;
     cursor: pointer;
 }
-/* Configurações da TABELA */
+/* Configurações da TABELA || TABLE Settings */
 table {
     width: 100%;
     color: white;
@@ -92,9 +92,9 @@ table {
 thead {
     display: block;
     background-color: #092D38;
-    height: 64px;
-    padding-top: 20px;
-    padding-right: 16px;
+    height: 6.4rem;
+    padding-top: 2rem;
+    padding-right: 1.6rem;
 }
 
 table thead, table tbody {
@@ -103,10 +103,8 @@ table thead, table tbody {
 
 table tbody {
     height: auto;
-    max-height: 400px;
+    max-height: 40rem;
     overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #020202 #ffffff;
 }
 
 table thead th, table tbody td {
@@ -159,15 +157,15 @@ tbody tr td {
 }
 
 .starmessage {
-    height: 400px;
+    height: 40rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 6rem;
 }
 
 .img-star{
-    width: 150px;
+    width: 15rem;
     object-fit: cover;
 }
 
@@ -175,4 +173,25 @@ tbody tr td {
     font-size: 4rem;
     color: #4E5455;    
 }
+
+/* Personaliza a parte da barra de rolagem || Customize the scroll bar part*/
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px;
+}
+
+/* Personaliza a parte que pode ser clicada e arrastada || Customize the part that can be clicked and dragged */
+::-webkit-scrollbar-thumb {
+    background-color: #065E7C; 
+    border-radius: 10px; 
+    border: 3px solid black; 
+}
+
+/* Personaliza o fundo da barra de rolagem || Customize the scrollbar background */
+::-webkit-scrollbar-track {
+    border-radius: 10px; 
+    margin: 2px; 
+}
+
+
 
