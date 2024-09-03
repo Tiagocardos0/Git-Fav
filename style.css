@@ -24,7 +24,6 @@ body {
 #app {
     width: 1120px;
     min-width: auto;
-    margin-inline: 25px;
     overflow: hidden;
 
     display: flex;
@@ -40,25 +39,30 @@ div#table {
 /* Configurações do HEADER */
 header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
+}
 
-    padding-top: 10px;
+.search {
+    display: flex;
+    gap: .8rem;
 }
 
 input[type=search] {
     background-color: #06181C;
-    min-width: 300px;
+    color: white;
+
+    width: 46rem;
     height: 4.8rem;
     
-    margin-right: .8rem;
+    padding-left: 1.6rem;
     border-radius: .5rem;
     border: none;
+    outline: none;
 }
 
 ::placeholder {
-    padding-left: 1.6rem;
     font-weight: 400;
 }
 
@@ -117,7 +121,7 @@ thead tr, tbody tr {
     grid-template-columns: 50rem 22rem 22rem 2fr;
 }
 
-tbody img {
+tbody .user-img {
     width: 5.6rem;
     height: 5.6rem;
     border-radius: 50%;
@@ -133,10 +137,6 @@ tbody tr td {
     height: 10.4rem;
 }
 
-table tbody::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
 .user a {
     display: flex;
     flex-direction: column;
@@ -144,10 +144,10 @@ table tbody::-webkit-scrollbar-track {
     padding-left: 1.6rem;
 
     color: white;
+}
 
-    & span {
-        font-weight: 300;
-    }
+.user a span {
+    font-weight: 300;
 }
 
 .btnremove {
@@ -158,21 +158,21 @@ table tbody::-webkit-scrollbar-track {
     font-weight: 600;
 }
 
-@media screen and (min-width: 1000px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .search {
-        display: flex;
-    }
-
-    input[type=search] {
-        width: 460px;
-    }
-
-    div#table {
-        width: 1120px;
-    }
+.starmessage {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
 }
+
+.img-star{
+    width: 150px;
+    object-fit: cover;
+}
+
+.starmessage div:nth-child(2) h1 {
+    font-size: 4rem;
+    color: #4E5455;    
+}
+

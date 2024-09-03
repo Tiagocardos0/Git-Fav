@@ -69,7 +69,7 @@ export class FavoritesView extends Favorites {
 
         this.update()
         this.onAdd()
-        this.tbody.appendChild(this.messageinitial());
+        /* this.tbody.appendChild(this.messageinitial()); */
     }
 
     onAdd() {
@@ -83,6 +83,12 @@ export class FavoritesView extends Favorites {
 
     update() {
         this.removeAllTr()
+
+        if (this.entries.length === 0) {
+            this.showMessageInitial()
+        } else {
+            this.hideMessageInitial()
+        }
 
         this.entries.forEach( user => { /* Para cada objeto dentro do ARRAY Cria-se uma linha (TR) || For each object within the ARRAY, a line (TR) is created*/
             const row = this.createRow()
@@ -119,7 +125,7 @@ export class FavoritesView extends Favorites {
 
         tr.innerHTML = `
             <td class="user">
-                <img src="" alt="">
+                <img class="user-img" src="" alt="">
                 <a href="" target="_blank"> <p></p> <span></span></a>
                 
             </td>
@@ -130,12 +136,21 @@ export class FavoritesView extends Favorites {
         return tr
     }
 
-    messageinitial() {
-        const tr = document.createElement('div')
+    showMessageInitial() {
+        const messageDiv = document.createElement('div')
 
-        tr.innerHTML = `
-            <div class="starmessage"><img src="assets/Estrela.svg"> <img src="assets/h1star.svg" alt=""></div>
+        messageDiv.classList.add('starmessage')
+        messageDiv.innerHTML = `
+            <div><img class="img-star" src="assets/Estrela.svg"></div> 
+            <div><h1>Nenhum favorito ainda</h1></div>
         `
-        return tr
+        this.tbody.parentNode.append(messageDiv)
     }
-}
+
+    hideMessageInitial() { 
+        const messageDiv = this.tbody.parentNode.querySelector('.starmessage')
+        if (messageDiv) {
+            messageDiv.remove()
+        }
+    }
+} 
